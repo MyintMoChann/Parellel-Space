@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Parellel Space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            font-family: 'Calibri', 'Candara', 'Segoe UI', sans-serif;
+        }
+
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Calibri', sans-serif; 
+            background-image: url('bg2.jpg');
+            background-repeat: repeat;
+            color: #333;
+            /* Added min-height to help with footer placement */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2 {
+            font-family: 'Calibri', sans-serif; 
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .navbar {
+            background-color: #000000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar li {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffffff;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffbdd3;
+        }
+
+        .navbar li:hover a::before {
+            transform: scaleX(1);
+        }
+
+        .card-container {
+            margin-top: 3%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* This ensures cards grow to fill space but don't push the footer weirdly */
+            flex: 1;
+            padding-bottom: 40px;
+        }
+
+        .card {
+            flex: 0 1 calc(33.33% - 20px);
+            background-color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* --- FOOTER STYLES START --- */
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            width: 100%;
+            margin-top: auto; /* Pushes footer to bottom */
+        }
+
+        .footer-content p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .footer-content a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-content a:hover {
+            color: #ffbdd3;
+        }
+        /* --- FOOTER STYLES END --- */
+
+        @media (max-width: 768px) {
+            .card {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 0 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Parellel Space</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="memo.html">Memos</a></li>
+            <li><a href="test2.html">Mix</a></li>
+        </ul>
+    </div>
+    
+    <div class="card-container">
+        <div class="card">
+            <div class="card-image"><img src="memo1.jpg" alt="memo1"></div>
+            <div class="card-content">
+                <h2 class="card-title">Fun Fair IIP</h2>
+                <p class="card-description">Despite my fault of holding our situationship for too long, this was the moment that i regretted denying your offer of being my girlfriend. You getting close to me made me realize that ive made a big mistake back then. My feelings grew beyond control.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="memo2.jpg" alt="memo2"></div>
+            <div class="card-content">
+                <h2 class="card-title">The first photo you sent during relationship</h2>
+                <p class="card-description">Gorgeous, ouutstanding, mesmerising djskafljdfdsjadjfk. So much i could sayy but les not waste your time reading all these. My princess is just so pretty i could kiss you all day.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="memo3.jpg" alt="Kachin Chicken Curry"></div>
+            <div class="card-content">
+                <h2 class="card-title">Awkward voice chat after confession</h2>
+                <p class="card-description">Myint Mo Chann Luver ly hok lar :p. Baby was so shyy during the video call inculding ennika and lucas. It wass awkward but definately a huge memory for me. Seeing you all smiling and quiet, adorable.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="memo4.jpg" alt="Roasted Pork"></div>
+            <div class="card-content">
+                <h2 class="card-title">English Studio</h2>
+                <p class="card-description">The class where we truely developed our bonds together. Also a memorable place where i held your hands for the first time ever after we started dating. <33</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="memo5.jpg" alt="Grilled Pork"></div>
+            <div class="card-content">
+                <h2 class="card-title">My Cutie's Old Pictures</h2>
+                <p class="card-description">Remember when you showed me pictures of little you XD. very adorable and also back when you had a slighty longer hair. I reassure you, you look astonishing no matter what :3</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="memo6.jpg" alt="Fried Pork Chops"></div>
+            <div class="card-content">
+                <h2 class="card-title">Sports Day</h2>
+                <p class="card-description">Ive lost the game but i think i was the winner in someone's heart. Felt miserable and terrible after defeat but somehow baby made me feel happy and forget about it. I LOVE YOU</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="memo7.jpg" alt="Fried Beef"></div>
+            <div class="card-content">
+                <h2 class="card-title">Graduation Day</h2>
+                <p class="card-description">THIS WAS JSUT BEAUTIFUL. MY FAVORITE PICTURE OF ALL TIME. in fact i even showed this to my mom and she wouldnt stop smiling at all ><. We also did some fun in the disabled toilet ( tw tw a kyoe py tk toilet TT). </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="memo9.jpg" alt="Gold Premium Steak"></div>
+            <div class="card-content">
+                <h2 class="card-title">Yit Sein Award This Year</h2>
+                <p class="card-description">Yit sein awards this year of 2026 goes too..... SHIN MON THANTTTT. a tha kone yit tr nor. Ok nasa i love you su pote.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="memo8.jpg" alt="Gold Premium Steak"></div>
+            <div class="card-content">
+                <h2 class="card-title">13/2/26</h2>
+                <p class="card-description">BBy is probably reading this on 14th so techinically yesterday was our first ever date. It was amazing. My lips were dry but after the hangout they were super wet. Not in a weird way but woah :0. My first ever long kisses was held by a girl i seriously want to marry with. I hope you know that i love you so much baby. <3</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img src="more.jpg" alt="Coming Soon"></div>
+            <div class="card-content">
+                <h2 class="card-title">More memories to be added...</h2>
+                <p class="card-description"></p>
+            </div>
+        </div>
+    </div> <footer class="footer">
+        <div class="footer-content">
+            <p>© Copyright 2023. Authorized by Benjamin.</p>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="memo.html">Memo</a>
+                <a href="test2.html">Mix</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
